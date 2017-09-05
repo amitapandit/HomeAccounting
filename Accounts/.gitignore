@@ -70,6 +70,11 @@ local.properties
 # BlueJ files
 *.ctxt
 
+# Html files
+.Html
+.css
+
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -96,6 +101,7 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties

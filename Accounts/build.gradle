@@ -21,10 +21,17 @@ repositories {
 	mavenCentral()
 }
 
+test {
+     useTestNG {
+         suites 'resources/testng.xml'
+     }
+ }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.testng:testng:5.7')
+	testCompile('info.cukes:cucumber-java:1.2.5')
+	testCompile('info.cukes:cucumber-testng:1.2.5')
+	testCompile('org.testng:testng:6.8')
 }
