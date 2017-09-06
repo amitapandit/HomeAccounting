@@ -1,6 +1,6 @@
 cd Accounts
 chmod +x gradlew
-./gradlew build
+./gradle build
 cd ../Transactions
 chmod +x gradlew
-./gradlew build
+./gradle build
