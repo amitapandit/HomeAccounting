@@ -1,7 +1,7 @@
 clear
 cd Accounts
 chmod +x gradlew
-gradlew build
+./gradlew build
 cd ../Transactions
 chmod +x gradlew
-gradlew build
+./gradlew build
