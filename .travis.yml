@@ -1,4 +1,6 @@
 language: java
-before_install: cd Accounts
+before_install: 
+  - cd Accounts
+  - chmod +x gradlew
 jdk:
   - oraclejdk8
