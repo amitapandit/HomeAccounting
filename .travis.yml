@@ -1,8 +1,6 @@
 // .travis.yml
 
-language: java
+language:java
 
-before_install: cd Accounts
+before_install:cd Accounts
 
-jdk:
-  - oraclejdk8
