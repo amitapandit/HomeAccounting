@@ -7,6 +7,6 @@ public class TestTransactions {
 
 	@Test
 	public void testTransaction() {
-		Assert.assertNull(null);
+		Assert.assertNotNull(null);
 	}
 }
