@@ -1,4 +1,3 @@
-clear
 cd Accounts
 chmod +x gradlew
 ./gradlew build
