@@ -1,4 +1,6 @@
 language: java
+before_install:
+  - chmod +x repo-build.sh
 jdk:
   - oraclejdk8
 script: ./repo-build.sh
