@@ -1,4 +1,3 @@
-#!/bin/bash
 clear
 cd Accounts
 chmod +x gradlew
