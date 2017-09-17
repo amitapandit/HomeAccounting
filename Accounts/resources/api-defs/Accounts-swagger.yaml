@@ -131,6 +131,12 @@ definitions:
       name:
         type: string
         example: Ram-Wallet
+      type:
+        type: string
+        enum:
+          - sb
+          - fd
+          - wl  
       description:
         type: string
       status:
