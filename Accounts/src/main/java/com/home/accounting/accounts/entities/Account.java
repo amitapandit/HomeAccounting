@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -35,6 +37,18 @@ public class Account implements IAccount, Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Getter
 	private long id;
+
+	@Override
+	public IAccount save() {
+		AmazonDynamoDB clinet;
+		return null;
+	}
+
+	@Override
+	public IAccount update() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
