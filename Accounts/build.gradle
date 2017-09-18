@@ -34,7 +34,7 @@ test {
 
 dependencyManagement {
     imports {
-		mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.197'
+		mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.86'
         mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.7.RELEASE'
     }
 }
@@ -42,7 +42,7 @@ dependencyManagement {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('com.amazonaws:aws-java-sdk-dynamodb:1.11.197')
+	compile('com.amazonaws:aws-java-sdk-dynamodb:1.11.86')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.testng:testng:6.8')

@@ -4,6 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.home.accounting.accounts.dtos.AccountDto;
 
 import lombok.Data;
@@ -30,7 +32,7 @@ public class Account implements IAccount {
 
 	private long id;
 	
-	
+
 	@Override
 	public IAccount createAccount() {
 		//Validate account DTO before invoking save on Account Entity

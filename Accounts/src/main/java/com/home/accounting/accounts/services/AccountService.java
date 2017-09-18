@@ -1,5 +1,7 @@
 package com.home.accounting.accounts.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 import com.home.accounting.accounts.dtos.AccountDto;
@@ -12,6 +14,9 @@ public class AccountService implements IAccountService {
 //	@Autowired
 //	AccountRepository accountRepository;
 
+	@Autowired
+	ConversionService conversionService;
+	
 	/**
 	 * Create an account with following data
 	 * <ol>
@@ -25,8 +30,7 @@ public class AccountService implements IAccountService {
 	 * </ol>
 	 */
 	public IAccount createAccount(AccountDto accountDto) {
-		IAccount account = new Account(accountDto.getName(), accountDto.getDescription(), accountDto.getStatus(),
-				accountDto.getType());
+		IAccount account = conversionService.convert(accountDto, IAccount.class);
 		IAccount createdAccount = account.createAccount();
 //		accountRepository.save(account);
 		return createdAccount;
