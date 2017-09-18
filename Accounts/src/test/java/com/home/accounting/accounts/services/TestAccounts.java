@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.home.accounting.accounts.dtos.AccountDto;
-import com.home.accounting.accounts.entities.IAccount;
+import com.home.accounting.accounts.model.IAccount;
 
 public class TestAccounts {
 

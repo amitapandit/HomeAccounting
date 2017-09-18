@@ -7,7 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Account implements IAccount, Serializable {
 
+
+
+	AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(
+			new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
+			.build(); 
+
+	
 	/**
 	 * Default serial version UID
 	 */
@@ -40,7 +49,7 @@ public class Account implements IAccount, Serializable {
 
 	@Override
 	public IAccount save() {
-		AmazonDynamoDB clinet;
+		
 		return null;
 	}
 
@@ -50,5 +59,8 @@ public class Account implements IAccount, Serializable {
 		return null;
 	}
 	
+	public void initialize() {
+		
+	}
 	
 }
