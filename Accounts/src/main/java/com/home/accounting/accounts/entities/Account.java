@@ -18,13 +18,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Account implements IAccount, Serializable {
 
-
-
-	AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(
-			new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
-			.build(); 
-
-	
 	/**
 	 * Default serial version UID
 	 */
@@ -47,20 +40,4 @@ public class Account implements IAccount, Serializable {
 	@Getter
 	private long id;
 
-	@Override
-	public IAccount save() {
-		
-		return null;
-	}
-
-	@Override
-	public IAccount update() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public void initialize() {
-		
-	}
-	
 }

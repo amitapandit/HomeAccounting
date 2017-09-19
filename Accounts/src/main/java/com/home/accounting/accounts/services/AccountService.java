@@ -1,5 +1,7 @@
 package com.home.accounting.accounts.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
@@ -7,13 +9,16 @@ import org.springframework.stereotype.Service;
 import com.home.accounting.accounts.dtos.AccountDto;
 import com.home.accounting.accounts.model.Account;
 import com.home.accounting.accounts.model.IAccount;
+import com.home.accounting.accounts.repositories.AccountRepository;
 
 @Service
 public class AccountService implements IAccountService {
 
-//	@Autowired
-//	AccountRepository accountRepository;
+	@Autowired
+	AccountRepository accountRepository;
 
+	IAccount Account;
+	
 	@Autowired
 	ConversionService conversionService;
 	
@@ -30,10 +35,12 @@ public class AccountService implements IAccountService {
 	 * </ol>
 	 */
 	public IAccount createAccount(AccountDto accountDto) {
-		IAccount account = conversionService.convert(accountDto, IAccount.class);
-		IAccount createdAccount = account.createAccount();
-//		accountRepository.save(account);
-		return createdAccount;
+		return null;
+	}
+
+	public List<IAccount> getAllAccounts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

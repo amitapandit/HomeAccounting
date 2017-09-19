@@ -145,6 +145,9 @@ definitions:
           - created
           - inactive
           - active
+      balance:
+        type: integer
+        format: double
     xml:
       name: Account
 externalDocs:
