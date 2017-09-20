@@ -17,9 +17,7 @@ public class AccountService implements IAccountService {
 
 	@Autowired
 	AccountRepository accountRepository;
-
-	IAccount Account;
-	
+		
 	@Autowired
 	ConversionService conversionService;
 	
@@ -36,19 +34,24 @@ public class AccountService implements IAccountService {
 	 * </ol>
 	 */
 	public AccountDetailsDto createAccount(AccountDto accountDto) {
-		return null;
+		Account account = conversionService.convert(accountDto, Account.class);
+		Account createdAccount = accountRepository.save(account);
+		
+		AccountDetailsDto accountDetails = conversionService.convert(createdAccount, AccountDetailsDto.class);
+		
+		return accountDetails;
 	}
 
-	public List<IAccount> getAllAccounts() {
+	public List<AccountDetailsDto> getAllAccounts() {
 		
 		return null;
 	}
 
-	public void deleteAccount(IAccount account2) {
+	public void deleteAccount(long accountId) {
 		
 	}
 
-	public List<IAccount> getAccountWithName(String name) {
+	public List<AccountDetailsDto> getAccountWithName(String name) {
 		
 		return null;
 	}

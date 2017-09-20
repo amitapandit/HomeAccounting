@@ -43,7 +43,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('com.amazonaws:aws-java-sdk-dynamodb:1.11.86')
+	compile('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.testng:testng:6.8')
+	compile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.testng:testng:6.8')
 }

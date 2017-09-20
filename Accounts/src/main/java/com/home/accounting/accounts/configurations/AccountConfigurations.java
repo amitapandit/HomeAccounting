@@ -6,6 +6,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.support.DefaultConversionService;
 
 import com.home.accounting.accounts.converters.AccountDtoToAccountModelConverter;
+import com.home.accounting.accounts.converters.AccountToAccountDetailsDtoConverter;
 import com.home.accounting.accounts.entities.Account;
 import com.home.accounting.accounts.entities.IAccount;
 import com.home.accounting.accounts.services.AccountService;
@@ -25,8 +26,8 @@ public class AccountConfigurations {
 	public ConversionService conversionService() {
 		DefaultConversionService conversionService = new DefaultConversionService();
 		conversionService.addConverter(new AccountDtoToAccountModelConverter());
+		conversionService.addConverter(new AccountToAccountDetailsDtoConverter());
 		return conversionService;
-		
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.home.accounting.accounts.services;
+package com.home.accounting.accounts.services.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.home.accounting.accounts.dtos.AccountDetailsDto;
 import com.home.accounting.accounts.dtos.AccountDto;
-import com.home.accounting.accounts.model.IAccount;
+import com.home.accounting.accounts.services.AccountService;
 
 public class AccountOperationsTests {
 

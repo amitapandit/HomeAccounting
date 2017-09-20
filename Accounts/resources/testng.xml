@@ -3,7 +3,7 @@
 <suite name="Default suite">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.home.accounting.accounts.services.AccountManaementTests"/>
+      <class name="com.home.accounting.accounts.services.AccountManagementTests"/>
       <class name="com.home.accounting.accounts.services.AccountOperationsTests"/>
     </classes>
   </test> <!-- Default test -->

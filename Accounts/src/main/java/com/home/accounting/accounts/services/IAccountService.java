@@ -4,16 +4,15 @@ import java.util.List;
 
 import com.home.accounting.accounts.dtos.AccountDetailsDto;
 import com.home.accounting.accounts.dtos.AccountDto;
-import com.home.accounting.accounts.model.IAccount;
 
 public interface IAccountService {
 
 	public AccountDetailsDto createAccount(AccountDto accountDto);
 	
-	public List<IAccount> getAllAccounts();
+	public List<AccountDetailsDto> getAllAccounts();
 
-	public void deleteAccount(IAccount account);
+	public void deleteAccount(long accountId);
 
-	public List<IAccount> getAccountWithName(String name);
+	public List<AccountDetailsDto> getAccountWithName(String name);
 	
 }

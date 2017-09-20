@@ -1,19 +1,21 @@
-package com.home.accounting.accounts.services;
+package com.home.accounting.accounts.services.test;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.home.accounting.accounts.dtos.AccountDetailsDto;
 import com.home.accounting.accounts.dtos.AccountDto;
 import com.home.accounting.accounts.exceptions.DuplicateAccountException;
-import com.home.accounting.accounts.model.IAccount;
+import com.home.accounting.accounts.services.AccountService;
+
 
 public class AccountManagementTests {
 
 
-	@Autowired
 	AccountService myAccountService;
 	
 
@@ -44,16 +46,20 @@ public class AccountManagementTests {
 		return accountDto;
 	}
 	
+	@BeforeClass
+	public void initialize() {
+		myAccountService = new AccountService();
+	}
 	
 	@Test
 	public void createAccount() {
 		
 		AccountDto accountDto = createWalletAccount01();
 		myAccountService.createAccount(accountDto);
-		List<IAccount> accountsList = myAccountService.getAllAccounts();
+		List<AccountDetailsDto> accountsList = myAccountService.getAllAccounts();
 	
 		boolean accountCreated = false;
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if( (account.getName().equals(accountDto.getName())) && 
 					(account.getId() > 0) ) {
 				accountCreated = true;
@@ -70,10 +76,10 @@ public class AccountManagementTests {
 	public void validateCreationOfAccountOfTypeWallet() {
 		AccountDto accountDto = createWalletAccount01();
 		myAccountService.createAccount(accountDto);
-		List<IAccount> accountsList = myAccountService.getAllAccounts();
+		List<AccountDetailsDto> accountsList = myAccountService.getAllAccounts();
 	
 		boolean accountCreated = false;
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if( (account.getName().equals(accountDto.getName())) && 
 					(account.getId() > 0) ) {
 				accountCreated = true;
@@ -87,10 +93,10 @@ public class AccountManagementTests {
 	public void validateCreationOfAccountOfTypeSavingsBank() {
 		AccountDto accountDto = createSavingsBankAccount01();
 		myAccountService.createAccount(accountDto);
-		List<IAccount> accountsList = myAccountService.getAllAccounts();
+		List<AccountDetailsDto> accountsList = myAccountService.getAllAccounts();
 	
 		boolean accountCreated = false;
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if( (account.getName().equals(accountDto.getName())) && 
 					(account.getId() > 0) ) {
 				accountCreated = true;
@@ -109,11 +115,11 @@ public class AccountManagementTests {
 		AccountDto accountDto02 = createSavingsBankAccount01();
 		myAccountService.createAccount(accountDto02);
 		
-		List<IAccount> accountsList = myAccountService.getAllAccounts();
+		List<AccountDetailsDto> accountsList = myAccountService.getAllAccounts();
 		boolean account01Created = false;
 		boolean account02Created = false;
 		
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if((account.getName().equals(accountDto01.getName()))) {
 				account01Created = true;
 			} else if((account.getName().equals(accountDto02.getName()))) {
@@ -128,17 +134,17 @@ public class AccountManagementTests {
 	public void validateIfAccountCanBeDeleted() {
 		AccountDto accountDto = createWalletAccount01();
 		myAccountService.createAccount(accountDto);
-		List<IAccount> accountsList = myAccountService.getAllAccounts();
+		List<AccountDetailsDto> accountsList = myAccountService.getAllAccounts();
 		
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if( (account.getName().equals(accountDto.getName())) && 
 					(account.getId() > 0) ) {
-				myAccountService.deleteAccount(account);
+				myAccountService.deleteAccount(account.getId());
 			}
 		}
 
 		boolean accountDeleted = true;
-		for(IAccount account: accountsList) {
+		for(AccountDetailsDto account: accountsList) {
 			if( (account.getName().equals(accountDto.getName())) && 
 					(account.getId() > 0) ) {
 				accountDeleted = false;
