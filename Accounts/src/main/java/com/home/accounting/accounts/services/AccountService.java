@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
+import com.home.accounting.accounts.dtos.AccountDetailsDto;
 import com.home.accounting.accounts.dtos.AccountDto;
 import com.home.accounting.accounts.model.Account;
 import com.home.accounting.accounts.model.IAccount;
@@ -34,11 +35,30 @@ public class AccountService implements IAccountService {
 	 * </ul>
 	 * </ol>
 	 */
-	public IAccount createAccount(AccountDto accountDto) {
+	public AccountDetailsDto createAccount(AccountDto accountDto) {
 		return null;
 	}
 
 	public List<IAccount> getAllAccounts() {
+		
+		return null;
+	}
+
+	public void deleteAccount(IAccount account2) {
+		
+	}
+
+	public List<IAccount> getAccountWithName(String name) {
+		
+		return null;
+	}
+
+	public AccountDetailsDto updateBalance(long id, Double newBalance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public AccountDetailsDto updateAccount(AccountDto updatedAccountDetails) {
 		// TODO Auto-generated method stub
 		return null;
 	}
